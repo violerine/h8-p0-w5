@@ -25,12 +25,9 @@ function graduates (students) {
     var arraySort=array.sort(compare) 
     obj[arraySort[0].class]=[{name:arraySort[0].name, score:arraySort[0].score}] 
       for(i=1;i<arraySort.length;i++){ 
-        //jadi kalo class nya beda, dia bikin property baru pake class yang isinya array
         if(arraySort[i].class!==array[i-1].class){ 
           obj[arraySort[i].class] = [] 
         } 
-        //kalo ga beda, dia ngepush di tmpt yang sama. pasti bener karena
-        //udah di sort berdasarkan class sebelomnya
         obj[arraySort[i].class].push({name:arraySort[i].name, score:arraySort[i].score}) 
       }
 return obj
