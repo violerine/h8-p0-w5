@@ -1,7 +1,6 @@
 
 function naikAngkot(arrPenumpang) {
     rute = ['A', 'B', 'C', 'D', 'E', 'F'];
-    var input=[['Dimitri', 'B', 'F'], ['Icha', 'A', 'B']]
     var arrayJarak=[]
 
     var array=[]
