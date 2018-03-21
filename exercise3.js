@@ -14,8 +14,6 @@ function highestScore (students) {
   if (a.class > b.class)
     return 1;
   return 0;
-
-  students.sort(compare);
   
 }
 var studentSort=students.sort(compare)
@@ -29,9 +27,14 @@ for(var i=1; i<studentSort.length; i++){
  array[index].push(studentSort[i])
 }
 
-var answer=[]
 for(var i=0; i<array.length; i++){
-  obj[array[i][0].class]= {name: array[i][0].name, scores:array[i][0].score }
+  array[i].sort(function(a,b){ 
+    return b.score -a.score 
+  })
+}
+
+for(var j=0; j<array.length; j++){
+  obj[array[j][0].class]= {name: array[j][0].name, scores:array[j][0].score }
 }
 
 return obj
