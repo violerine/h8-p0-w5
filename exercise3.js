@@ -19,6 +19,7 @@ function highestScore (students) {
   
 }
 var studentSort=students.sort(compare)
+// console.log(studentSort)
 array[0]= [studentSort[0]]
 
 for(var i=1; i<studentSort.length; i++){
@@ -29,14 +30,34 @@ for(var i=1; i<studentSort.length; i++){
  array[index].push(studentSort[i])
 }
 
-var answer=[]
+function compareArray(a,b) {
+  for( var i=0; i<array.length; i++){
+    console.log(array.length)
+  if (a[i].score < b[i].score)
+    return -1;
+  if (a[i].score > b[i].score)
+    return 1;
+  }
+  return 0;
+  // array.sort(compareArray);
+}
+// console.log(array.sort(compareArray))
 for(var i=0; i<array.length; i++){
-  obj[array[i][0].class]= {name: array[i][0].name, scores:array[i][0].score }
+  array[i].sort(function(a,b){ 
+    return b.score -a.score 
+  })
+}
+
+
+for(var j=0; j<array.length; j++){
+  obj[array[j][0].class]= {name: array[j][0].name, scores:array[j][0].score }
+ 
 }
 
 return obj
 
 }
+
 
 console.log(highestScore([
   {
@@ -103,5 +124,6 @@ console.log(highestScore([
 
 
 console.log(highestScore([])); //{}
+
 
 
