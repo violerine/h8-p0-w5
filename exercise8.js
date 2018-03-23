@@ -1,10 +1,7 @@
 function cariPelaku(str) {
-    var abc = /[a-c]/
-    count=0
-        if(abc.test(str)==true){
-            count++
-        } 
-   return count
+ var match = str.match(/abc/gi)
+ console.log(match)
+ return match.length
   }
   
   // TEST CASES
@@ -13,3 +10,4 @@ function cariPelaku(str) {
   console.log(cariPelaku('bcabcac')); // 1
   console.log(cariPelaku('abcabcabc')); // 3
   console.log(cariPelaku('babcbacabc')); // 2
+  console.log(cariPelaku('baBcBacabc')); // 2
